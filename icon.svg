@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" width="128" height="128">
+  <!-- Warm parchment background -->
+  <rect x="4" y="4" width="120" height="120" rx="22" ry="22" fill="#fcfbf0" stroke="#504e44" stroke-width="2"/>
+
+  <!-- 5 color stripes — theme's workhorse palette -->
+  <!-- Amber (functions / methods / tags) -->
+  <rect x="20" y="24" width="88" height="12" rx="3" ry="3" fill="#7a3500"/>
+  <!-- Red (comments) -->
+  <rect x="20" y="42" width="76" height="12" rx="3" ry="3" fill="#990e2d"/>
+  <!-- Indigo (strings) -->
+  <rect x="20" y="60" width="82" height="12" rx="3" ry="3" fill="#471acc"/>
+  <!-- Green (numbers / constants) -->
+  <rect x="20" y="78" width="70" height="12" rx="3" ry="3" fill="#094d29"/>
+  <!-- Teal (types) -->
+  <rect x="20" y="96" width="86" height="12" rx="3" ry="3" fill="#0a5c5c"/>
+</svg>

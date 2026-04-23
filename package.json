@@ -1,0 +1,74 @@
+{
+	"name": "antique-polychrome",
+	"displayName": "Antique Polychrome",
+	"description": "Warm-parchment 8-theme family: 4 Polychrome (8-color palette) + 4 Monochrome (amber accent only) variants in Light / Light HC / Dark / Dark HC. Bundles Catppuccin Perfect icons (Latte/Mocha, MIT) as Sun/Moon, auto-paired with the active color theme.",
+	"version": "1.4.1",
+	"engines": {
+		"vscode": "^1.74.0"
+	},
+	"main": "./extension.js",
+	"activationEvents": [
+		"onStartupFinished"
+	],
+	"categories": [
+		"Themes"
+	],
+	"contributes": {
+		"iconThemes": [
+			{
+				"id": "antique-polychrome-sun",
+				"label": "Antique Polychrome Sun",
+				"path": "./fileicons/antique-polychrome-sun/icon-theme.json"
+			},
+			{
+				"id": "antique-polychrome-moon",
+				"label": "Antique Polychrome Moon",
+				"path": "./fileicons/antique-polychrome-moon/icon-theme.json"
+			}
+		],
+		"themes": [
+			{
+				"label": "Antique Polychrome",
+				"uiTheme": "hc-light",
+				"path": "./themes/antique-polychrome-color-theme.json"
+			},
+			{
+				"label": "Antique Polychrome Light",
+				"uiTheme": "vs",
+				"path": "./themes/antique-polychrome-light-color-theme.json"
+			},
+			{
+				"label": "Antique Polychrome Dark",
+				"uiTheme": "vs-dark",
+				"path": "./themes/antique-polychrome-dark-color-theme.json"
+			},
+			{
+				"label": "Antique Polychrome Dark HC",
+				"uiTheme": "hc-black",
+				"path": "./themes/antique-polychrome-dark-hc-color-theme.json"
+			},
+			{
+				"label": "Antique Monochrome",
+				"uiTheme": "hc-light",
+				"path": "./themes/antique-monochrome-color-theme.json"
+			},
+			{
+				"label": "Antique Monochrome Light",
+				"uiTheme": "vs",
+				"path": "./themes/antique-monochrome-light-color-theme.json"
+			},
+			{
+				"label": "Antique Monochrome Dark",
+				"uiTheme": "vs-dark",
+				"path": "./themes/antique-monochrome-dark-color-theme.json"
+			},
+			{
+				"label": "Antique Monochrome Dark HC",
+				"uiTheme": "hc-black",
+				"path": "./themes/antique-monochrome-dark-hc-color-theme.json"
+			}
+		]
+	},
+	"publisher": "local",
+	"icon": "icon.png"
+}
