@@ -49,11 +49,17 @@ Both icon sets are from
 [`thang-nm/catppuccin-perfect-icons`](https://github.com/thang-nm/catppuccin-perfect-icons)
 (MIT) — copied into `fileicons/` to keep the extension self-contained.
 
-The extension also bundles
-[`vscode-icons-team/vscode-icons`](https://github.com/vscode-icons/vscode-icons)
-(MIT) as a reference library under `fileicons/_library-vscode-icons/icons/` so
-individual icons can be cherry-picked into the Sun/Moon themes if we want to
-swap specific file-type icons.
+Two reference libraries are bundled for cherry-picking individual icons into
+the Sun/Moon themes (with `vsi_*` and `mp_*` prefixes respectively):
+
+- [`vscode-icons-team/vscode-icons`](https://github.com/vscode-icons/vscode-icons)
+  (MIT) under `fileicons/_library-vscode-icons/icons/`
+- [Monokai Pro Light Filter Sun](https://monokai.pro/) icons, extracted from
+  the original `.woff` font to SVG, under
+  `fileicons/_library-monokai-pro-light-filter-sun/icons/` —
+  **commercial license, personal use only, must not be redistributed**
+
+See `fileicons/README.md` for cherry-pick instructions.
 
 ## Activate
 
@@ -61,6 +67,12 @@ swap specific file-type icons.
 2. Sun or Moon icons activate automatically based on whether the selected theme is light or dark
 
 ## Installation (local only)
+
+This extension is **not distributable** — it bundles Monokai Pro icons under
+a personal-use license. Do not publish it to the marketplace, push it to a
+public repo, or share it with teammates. To make it shareable, delete the
+`_library-monokai-pro-light-filter-sun/` directory and any `mp_*` icon
+references (see `fileicons/README.md`).
 
 This extension lives as a symlink from your project's `.vscode/` into
 `~/.vscode/extensions/`:
@@ -95,8 +107,11 @@ visibility fixes, widget-family coverage (checkbox / radio / inputOption /
 button), and the Sun/Moon icon auto-pairing.
 
 Icons:
-- **Sun / Moon** — [Catppuccin Perfect Icons](https://github.com/thang-nm/catppuccin-perfect-icons) (MIT) — Latte and Mocha variants
-- **Reference library** — [vscode-icons](https://github.com/vscode-icons/vscode-icons) (MIT) — bundled as SVGs for cherry-picking
 
-Both license files preserved at `fileicons/CATPPUCCIN-LICENSE.txt` and
-`fileicons/VSCODE-ICONS-LICENSE.txt`.
+- **Sun / Moon (native)** — [Catppuccin Perfect Icons](https://github.com/thang-nm/catppuccin-perfect-icons) (MIT) — Latte and Mocha variants
+- **Reference library `vsi_*`** — [vscode-icons](https://github.com/vscode-icons/vscode-icons) (MIT) — bundled as SVGs for cherry-picking
+- **Reference library `mp_*`** — [Monokai Pro Light Filter Sun](https://monokai.pro/) — glyphs extracted from the official `.woff` font; **commercial license, personal use only**
+
+License files preserved at `fileicons/CATPPUCCIN-LICENSE.txt`,
+`fileicons/VSCODE-ICONS-LICENSE.txt`, and
+`fileicons/_library-monokai-pro-light-filter-sun/MONOKAI-PRO-LICENSE.txt`.
