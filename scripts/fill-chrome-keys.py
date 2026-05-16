@@ -134,6 +134,28 @@ SUNSET_LIGHT_HC = {
     "fg":      "#000000",
 }
 
+# Antique Polychrome/Monochrome light variants — warm parchment palette.
+WARM_LIGHT = {
+    "base":    "#fcfbf0",
+    "surface": "#EBE6D6",
+    "chrome":  "#D2CCB8",
+    "hover":   "#cbc9c3",
+    "accent":  "#7a3500",
+    "muted":   "#7b7664",
+    "fg":      "#000000",
+}
+
+# Antique HC-light: same base/surface, but borders use stronger contrast.
+WARM_LIGHT_HC = {
+    "base":    "#fcfbf0",
+    "surface": "#EBE6D6",
+    "chrome":  "#a8a394",
+    "hover":   "#cbc9c3",
+    "accent":  "#7a3500",
+    "muted":   "#504e44",
+    "fg":      "#000000",
+}
+
 # Bug fix: this key was set to a bright cream (#faf5e3) in every dark variant.
 # Replace it with a sensible per-palette dark.
 TAB_UNFOCUSED_ACTIVE_BG_BUGFIX = {
@@ -143,6 +165,8 @@ TAB_UNFOCUSED_ACTIVE_BG_BUGFIX = {
     "sunset-dark-hc": "#0a0506",
     "sunset-light":   "#fff0e6",
     "sunset-light-hc":"#fafafa",
+    "warm-light":     "#EBE6D6",
+    "warm-light-hc":  "#EBE6D6",
 }
 
 # Files to update, each with its palette identity.
@@ -155,6 +179,10 @@ TARGETS = [
     ("themes/antique-sunset-dark-hc-color-theme.json",      SUNSET_DARK_HC,  "sunset-dark-hc"),
     ("themes/antique-sunset-light-color-theme.json",        SUNSET_LIGHT,    "sunset-light"),
     ("themes/antique-sunset-color-theme.json",              SUNSET_LIGHT_HC, "sunset-light-hc"),
+    ("themes/antique-polychrome-light-color-theme.json",    WARM_LIGHT,      "warm-light"),
+    ("themes/antique-monochrome-light-color-theme.json",    WARM_LIGHT,      "warm-light"),
+    ("themes/antique-polychrome-color-theme.json",          WARM_LIGHT_HC,   "warm-light-hc"),
+    ("themes/antique-monochrome-color-theme.json",          WARM_LIGHT_HC,   "warm-light-hc"),
 ]
 
 
@@ -172,9 +200,13 @@ def main() -> None:
                 colors[k] = v
                 added += 1
 
-        # Bug fix: tab.unfocusedActiveBackground should not be cream
+        # Bug fix (dark variants only): tab.unfocusedActiveBackground was
+        # set to a bright cream in every dark theme — invert intent of
+        # tab.unfocusedActiveForeground. On light themes a bright value is
+        # legitimate, so skip there.
+        is_dark = palette_name in ("warm-dark", "hc-black", "sunset-dark", "sunset-dark-hc")
         bug_fixed = False
-        if colors.get("tab.unfocusedActiveBackground", "").lower() in ("#faf5e3", "#ffffff", "#fff5f0"):
+        if is_dark and colors.get("tab.unfocusedActiveBackground", "").lower() in ("#faf5e3", "#ffffff", "#fff5f0"):
             colors["tab.unfocusedActiveBackground"] = TAB_UNFOCUSED_ACTIVE_BG_BUGFIX[palette_name]
             bug_fixed = True
 
