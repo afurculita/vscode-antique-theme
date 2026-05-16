@@ -2,7 +2,7 @@
 	"name": "antique-polychrome",
 	"displayName": "Antique Polychrome",
 	"description": "Warm-parchment 8-theme family: 4 Polychrome (8-color palette) + 4 Monochrome (amber accent only) variants in Light / Light HC / Dark / Dark HC. Bundles Catppuccin Perfect icons (Latte/Mocha, MIT) as Sun/Moon, auto-paired with the active color theme.",
-	"version": "1.5.1",
+	"version": "1.6.0",
 	"engines": {
 		"vscode": "^1.74.0"
 	},
@@ -66,6 +66,26 @@
 				"label": "Antique Monochrome Dark HC",
 				"uiTheme": "hc-black",
 				"path": "./themes/antique-monochrome-dark-hc-color-theme.json"
+			},
+			{
+				"label": "Antique Sunset",
+				"uiTheme": "hc-light",
+				"path": "./themes/antique-sunset-color-theme.json"
+			},
+			{
+				"label": "Antique Sunset Light",
+				"uiTheme": "vs",
+				"path": "./themes/antique-sunset-light-color-theme.json"
+			},
+			{
+				"label": "Antique Sunset Dark",
+				"uiTheme": "vs-dark",
+				"path": "./themes/antique-sunset-dark-color-theme.json"
+			},
+			{
+				"label": "Antique Sunset Dark HC",
+				"uiTheme": "hc-black",
+				"path": "./themes/antique-sunset-dark-hc-color-theme.json"
 			}
 		]
 	},
